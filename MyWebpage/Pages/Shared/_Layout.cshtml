@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="logga min webbsida" />
+        <h3 class="date">Dagens datum: @DateTime.Now </h3>
+    </header>
+    <div class="container">
+
+        <div class="mainContainer">
+            <nav class="navMenu">
+                <ul>
+                    <li><a href="https://localhost:5001">Startsida</a></li>
+                    <li><a href="https://localhost:5001/razor">Razor</a></li>
+                    <li><a href="https://localhost:5001/about">Om sidan</a></li>
+                </ul>
+            </nav>
+
+            <div class="textContainer">
+                @RenderBody()
+            </div>
+        </div><!--Slut på mainContainer-->
+
+
+    </div><!--Slut på container-->
+    <script src="js/main.js"></script>
+    <footer>Av Rebecka Högström - Kontakta mig via e-post: reho0301@student.miun.se</footer>
+
+</body>
+</html>

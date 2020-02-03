@@ -1,0 +1,42 @@
+﻿@page
+@{
+    ViewData["Title"] = "Razor"; //Titel för sidan
+
+    var today = DateTime.Now.ToString("dddd"); <!--Sätter variabel för dag för veckan-->
+
+    //Array med lästa kurser
+    string[] courses = { "dt057, Webbutveckling I", "dt084g, Introduktion till programmering med JavaScript", "dt163g, Digital bildbehandling för webb",
+"gd0086, Typografi och form för webb", "dt003g, Databaser", "dt093g, Webbutveckling II", "dt068g Webbanvändbarhet", "dt152g, Webbdesign för CMS",
+"ik060g, Projektledning", };
+
+    var date = DateTime.Now; <!--Variabel för dagens datum-->
+}
+
+<h2>Razor</h2>
+
+<h3>Information</h3>
+<h3>Datum/klockslag: @date</h3> <!--Utskrift dagens datum/klockslag-->
+
+<p>
+    @if (@today == "monday") //Skriver ut om det är måndag eller inte
+    {
+
+    <p>Idag är det måndag!</p>
+}
+else
+{
+    <p>Idag är det inte måndag.</p><br/>
+}
+
+<h3>Kurser jag läst:</h3>
+
+<div class="courses">
+    <ul>
+        @foreach (var course in courses) //Skriver ut alla lästa kurser i en oordnad lista
+        {
+         <li>@course</li>
+        }
+    </ul><br/>
+</div>
+
+<div class="output2"></div>
